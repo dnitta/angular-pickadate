@@ -253,7 +253,7 @@
               var isValidDate = dateUtils.parseDate(val, format);
 
               if (isValidDate) $render({ skipRenderInput: true });
-              ngModel.$setValidity('date', !!isValidDate);
+              ngModel.$setValidity('date', !!isValidDate || val == null || val == '');
             });
 
             $document.on('click', function(e) {
